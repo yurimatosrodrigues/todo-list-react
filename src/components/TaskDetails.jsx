@@ -21,8 +21,7 @@ const TaskDetails = () => {
             <div className='task-details-container'> 
                 <h2>{params.taskTitle}</h2>
                 <p>
-                    Lorem ipsum, dolot sit amet consectetur aeteudfm
-                    eienfd adfsedaedfa~iidfsd pjfkne\iaef ksdfna~ief
+                    {params.TaskDetails}
                 </p>
             </div>
         </> 

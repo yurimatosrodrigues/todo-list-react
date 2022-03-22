@@ -13,8 +13,12 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    console.log('task mudou');
-  }, [tasks])
+    const fetchTasks = async () => {
+      const {data} = await axios.get('https://jsonplaceholder.cypress.io/todos?_limit=10');
+      setTasks(data);
+    }
+    fetchTasks();
+  }, [])
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map(task => {
@@ -26,8 +30,7 @@ const App = () => {
   };
 
   const handleTaskAddition = (taskTitle) =>{
-    const newTasks = [
-      ... tasks, 
+    const newTasks = [... tasks,
       {
         title: taskTitle,
         id: uuidv4(),
@@ -38,7 +41,7 @@ const App = () => {
   }
 
   const handleTaskDeletion = (taskId) =>{
-    const newTasks = tasks.filter(task => task.id != taskId);
+    const newTasks = tasks.filter(task => task.id !== taskId);
     setTasks(newTasks);
   }
 

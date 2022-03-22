@@ -10,7 +10,7 @@ const AddTask = ({handleTaskAddition}) => {
     };
 
     const handleAddTaskClick = () => {        
-        if(inputData.trim() != ''){
+        if(inputData.trim() !== ''){
             handleTaskAddition(inputData);
             setInputData("");
         }

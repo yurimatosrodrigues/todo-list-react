@@ -13,11 +13,16 @@
     cursor: pointer;
 }
 
+.buttons-container{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .remove-task-button, .see-task-details-button{
     background-color: #555;
     border: none;
     font-size: 23px;
     color: #A433E6;
     margin: 0 5px
-
 }
